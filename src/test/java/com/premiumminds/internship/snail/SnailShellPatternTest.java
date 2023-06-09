@@ -18,8 +18,8 @@ import org.junit.runners.JUnit4;
 public class SnailShellPatternTest {
 
   //constants for small matrix
-  public static final int LINE = 5;                          // Dimension
-  public static final int ELEMENTS = (int) pow(LINE, 2);        // Number of elements
+  public static final int DIMENSION = 5;                            // Dimension
+  public static final int ELEMENTS = (int) pow(DIMENSION, 2);       // Number of elements
 
   public static final int[][] MATRIX = {
               { 1, 2, 3, 4, 5 },
@@ -29,9 +29,10 @@ public class SnailShellPatternTest {
               { 13, 12, 11, 10, 9 }
   };
 
+
   //constants for big matrix
-  public static final int LINE_2 = 10000;                      // Dimension
-  public static final int ELEMENTS_2 = (int) pow(LINE_2, 2);    // Number of elements
+  public static final int DIMENSION_2 = 10000;                       // Dimension
+  public static final int ELEMENTS_2 = (int) pow(DIMENSION_2, 2);    // Number of elements
 
 
   /**
@@ -88,15 +89,15 @@ public class SnailShellPatternTest {
   @Test
   public void BigMatrixTest()
           throws InterruptedException, ExecutionException, TimeoutException{
-    int[][] matrix = new int[LINE_2][];
+    int[][] matrix = new int[DIMENSION_2][];
 
     //initialization of each line
-    for (int i = 0; i < LINE_2; i++)
-        matrix[i] = new int[LINE_2];
+    for (int i = 0; i < DIMENSION_2; i++)
+        matrix[i] = new int[DIMENSION_2];
 
     //inicialization of each position [i][j]
-    for (int i = 0; i < LINE_2; i++)
-      for (int j = 0; j < LINE_2; j++)
+    for (int i = 0; i < DIMENSION_2; i++)
+      for (int j = 0; j < DIMENSION_2; j++)
         matrix[i][j] = 1;
 
     // Initializes and completes expected array
