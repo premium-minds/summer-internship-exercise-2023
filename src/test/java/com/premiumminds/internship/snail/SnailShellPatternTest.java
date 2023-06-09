@@ -51,10 +51,10 @@ public class SnailShellPatternTest {
   }
 
   /**
-   * Tests the result for non-square matrix
+   * Tests the result for oddSized matrix
    */
   @Test
-  public void NonSquareMatrixTest()
+  public void OddSizedMatrix()
     throws InterruptedException, ExecutionException, TimeoutException{
 
     int val = 0;
@@ -62,6 +62,20 @@ public class SnailShellPatternTest {
     for (int i = 0; i < ELEMENTS; i++)
       expected[i] = ++val;
     Future<int[]> count = new SnailShellPattern().getSnailShell(MATRIX);
+    int[] result = count.get(10, TimeUnit.SECONDS);
+    assertArrayEquals(result, expected);
+  }
+
+  /**
+   * Tests the result for non-square matrix
+   */
+
+  @Test
+  public void NonSquareMatrixTest()
+    throws InterruptedException, ExecutionException, TimeoutException{
+    int[][] matrix = {{1, 2}, {3, 4, 5}};
+    int[] expected = new int[0];
+    Future<int[]> count = new SnailShellPattern().getSnailShell(matrix);
     int[] result = count.get(10, TimeUnit.SECONDS);
     assertArrayEquals(result, expected);
   }

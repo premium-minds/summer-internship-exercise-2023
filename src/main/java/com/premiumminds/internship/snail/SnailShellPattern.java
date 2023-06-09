@@ -41,13 +41,14 @@ class SnailShellPattern implements ISnailShellPattern {
         return new int[0];
       }
 
+      size = matrix.length;
+
       //checks if is a non-square matrix
       for (int[] ints : matrix)
-        if (ints.length < matrix.length)
+        if (ints.length < matrix.length || ints.length != size)
           return new int[0];
 
       end = matrix.length - 1;
-      size = matrix.length;
 
       // Makes a full turn
       while (begin < size && end >= begin && begin != end){
