@@ -2,10 +2,10 @@ package com.premiumminds.internship.snail;
 
 import static org.junit.Assert.assertArrayEquals;
 
-import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
+import java.util.concurrent.ExecutionException;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
